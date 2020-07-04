@@ -6,6 +6,5 @@ stack_name = "nan1"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-j5hcubvh0lmo"
 s3_prefix = "nan1"
 region = "us-east-2"
-confirm_changeset = true
+confirm_changeset = false
 capabilities = "CAPABILITY_IAM"
-
