@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Unit test
-        run: python -m unittest test_lambda_function.py
+        run: python -m unittest ncounter/test_lambda_function.py
 
       - name: sam build
         uses: youyo/aws-sam-action/python3.8@master
