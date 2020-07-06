@@ -8,11 +8,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: Install boto3
-        run: pip install boto3
-
       - name: Unit test
-        run: python3 -m unittest -v ncounter/test_lambda_function.py
+        run: python3 -m unittest ncounter/test_lambda_function.py
 
       - name: sam build
         uses: youyo/aws-sam-action/python3.8@master

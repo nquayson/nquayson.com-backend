@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
-Description: A starter AWS Kyekyeku lambda api dynamo.
+Description: The resume challenge, create lambda and api.
 Resources:
   ncounter:
     Type: 'AWS::Serverless::Function'
@@ -8,7 +8,7 @@ Resources:
       Handler: lambda_function.lambda_handler
       Runtime: python3.8
       CodeUri: ./ncounter/
-      Description: A starter AWS Lambda function.
+      Description: This lambda updates count item on Dyndb.
       MemorySize: 128
       Timeout: 3
       Events:
@@ -16,5 +16,5 @@ Resources:
           Type: Api
           Properties:
             Path: /MyResource
-            Method: ANY
+            Method: GET
 

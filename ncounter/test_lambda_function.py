@@ -1,6 +1,5 @@
-import boto3
 import unittest
-from lambda_function import lambda_handler
+from ncounter.lambda_function import lambda_handler
 
 
 class TestLambda(unittest.TestCase):
