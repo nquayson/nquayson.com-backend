@@ -8,9 +8,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: Install boto3
-        run: pip install boto3
-
       - name: See work dir
         run: pwd
        
