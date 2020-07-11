@@ -2,11 +2,20 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: The resume challenge, create lambda and api.
 Resources:
+  hitsGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      Cors:
+        AllowMethods: "'*'"
+        AllowHeaders: "'*'"
+        AllowOrigin: "'*'"
   ncounter:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: lambda_function.lambda_handler
       Runtime: python3.8
+      Policies: AmazonDynamoDBFullAccess
       CodeUri: ./ncounter/
       Description: This lambda updates count item on Dyndb.
       MemorySize: 128
@@ -15,6 +24,7 @@ Resources:
         Api1:
           Type: Api
           Properties:
-            Path: /MyResource
-            Method: GET
-
+            Path: /num
+            Method: get
+            RestApiId:
+              Ref: hitsGateway

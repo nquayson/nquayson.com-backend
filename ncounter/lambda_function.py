@@ -23,7 +23,6 @@ def lambda_handler(event,context):
         item = response['Item']['hcount']
     except Exception as e: print(e)
     
-    return {"code":200, 
-            "count":item,
-           "message":"Add success"
-    }
+    return {"count": item, 'statusCode': 200}
+
+    #return {"code":200, "count":item}
