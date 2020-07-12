@@ -23,6 +23,10 @@ def lambda_handler(event,context):
         item = response['Item']['hcount']
     except Exception as e: print(e)
     
-    return {"count": item, 'statusCode': 200}
-
-    #return {"code":200, "count":item}
+    
+    return {
+        "isBase64Encoded": "false",
+        "statusCode": 200,
+        "headers": { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Credentials" : "true" },
+        "body": item
+        }
