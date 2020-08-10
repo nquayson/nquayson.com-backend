@@ -1,5 +1,6 @@
 #import boto3
 from decimal import Decimal
+import os
 
 
 def lambda_handler(event,context):
@@ -8,7 +9,7 @@ def lambda_handler(event,context):
     
     try:
         dynamodb = boto3.resource('dynamodb')
-        table = dynamodb.Table('ntable')
+        table = dynamodb.Table(os.environ["TABLE_NAME"])
         
         
         table.update_item(Key={'id': '1'},
