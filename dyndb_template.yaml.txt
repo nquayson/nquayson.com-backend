@@ -5,6 +5,7 @@ Resources:
   ntable:
     Type: 'AWS::Serverless::SimpleTable'
     Properties:
+      TableName: ntable
       PrimaryKey:
         Name: id
         Type: String
