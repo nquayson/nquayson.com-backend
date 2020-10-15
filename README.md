@@ -1,3 +1,5 @@
+![.github/workflows/backend_actions.yml](https://github.com/nquayson/nquayson.com-backend/workflows/.github/workflows/backend_actions.yml/badge.svg)
+
 # Introduction
 This website was created in response to [the cloud resume challenge](https://cloudresumechallenge.dev/instructions/). The code in this repository represents only the backend code. The backend infrastructure is built with AWS SAM using Github Actions. 
 
